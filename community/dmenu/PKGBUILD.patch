@@ -1,0 +1,19 @@
+--- /tmp/bauerbill/build/community/dmenu/PKGBUILD.bak	2011-02-13 21:35:07.893333264 -0500
++++ /tmp/bauerbill/build/community/dmenu/PKGBUILD	2011-02-13 21:36:51.099998600 -0500
+@@ -12,6 +12,7 @@
+ arch=('i686' 'x86_64')
+ license=('MIT')
+ depends=('sh' 'libxinerama')
++patchdir="$HOME/src/community/dmenu"
+ #source=("http://dl.suckless.org/tools/$pkgname-$pkgver.tar.gz")
+ source=("$pkgname-$pkgver.tar.gz::http://hg.suckless.org/dmenu/archive/tip.tar.gz")
+ md5sums=('48b1e63cbf0ae7993cc68d365412d5e5')
+@@ -19,6 +20,8 @@
+ build(){
+ #  cd $srcdir/$pkgname-$pkgver
+   cd `find $srcdir -type d -name dmenu-\*`
++  cp $patchdir/config.mk config.mk
++  patch -p1 < $patchdir/config.diff || return 1
+   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+ }
+ 

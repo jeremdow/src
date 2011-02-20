@@ -1,0 +1,21 @@
+--- /tmp/bauerbill/build/aur/surf-hg/PKGBUILD.bak	2011-02-16 00:04:21.520000213 -0500
++++ /tmp/bauerbill/build/aur/surf-hg/PKGBUILD	2011-02-16 00:06:03.129999957 -0500
+@@ -8,6 +8,7 @@
+ license=("MIT/X")
+ arch=("i686" "x86_64")
+ depends=("gtk2" "libwebkit")
++patchdir="$HOME/src/aur/surf-hg"
+ makedepends=("pkgconfig" "mercurial" "xorg-utils")
+ conflicts=("surf")
+ provides=("surf")
+@@ -26,6 +27,10 @@
+     hg clone ${_hgroot}/${_hgrepo}
+     cd ${_hgrepo}
+   fi
++
++  cp $patchdir/config.h config.h
++  patch -p1 < $patchdir/hide-indicator.diff || return 1
++  patch -p1 < $patchdir/surf-0.4-searchengines.diff || return 1
+   
+   msg "Starting build process."
+   make || return 1

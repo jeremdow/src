@@ -1,0 +1,19 @@
+--- /tmp/bauerbill/build/aur/tabbed-hg/PKGBUILD.bak	2011-02-15 23:10:59.723333540 -0500
++++ /tmp/bauerbill/build/aur/tabbed-hg/PKGBUILD	2011-02-15 23:11:42.636666650 -0500
+@@ -8,6 +8,7 @@
+ license=("MIT/X")
+ arch=("i686" "x86_64")
+ depends=("libx11")
++patchdir="$HOME/src/community/tabbed"
+ makedepends=("mercurial")
+ conflicts=("tabbed")
+ provides=("tabbed")
+@@ -26,6 +27,8 @@
+     hg clone ${_hgroot}/${_hgrepo}
+     cd ${_hgrepo}
+   fi
++
++  cp $patchdir/config.h config.h
+   
+   msg "Starting build process."
+   make || return 1

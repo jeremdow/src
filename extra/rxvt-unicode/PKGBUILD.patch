@@ -1,0 +1,10 @@
+--- /tmp/bauerbill/build/extra/rxvt-unicode/PKGBUILD.bak	2010-12-09 01:29:12.340002046 -0500
++++ /tmp/bauerbill/build/extra/rxvt-unicode/PKGBUILD	2010-12-09 01:31:08.420000287 -0500
+@@ -35,6 +35,7 @@
+     --enable-utmp \
+     --enable-wtmp \
+     --enable-lastlog \
++    --disable-unicode3 \
+     --disable-frills
+   make
+ }

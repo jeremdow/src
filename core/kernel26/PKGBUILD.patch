@@ -1,0 +1,40 @@
+--- /tmp/bauerbill/build/core/kernel26/PKGBUILD.bak	2010-12-14 19:36:01.257905196 -0500
++++ /tmp/bauerbill/build/core/kernel26/PKGBUILD	2010-12-14 19:54:19.025980693 -0500
+@@ -2,8 +2,8 @@
+ # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+ # Maintainer: Thomas Baechler <thomas@archlinux.org>
+ pkgbase="kernel26"
+-pkgname=('kernel26' 'kernel26-headers' 'kernel26-docs') # Build stock -ARCH kernel
+-# pkgname=kernel26-custom       # Build kernel with a different name
++#pkgname=('kernel26' 'kernel26-headers' 'kernel26-docs') # Build stock -ARCH kernel
++pkgname=kernel26-custom       # Build kernel with a different name
+ _kernelname=${pkgname#kernel26}
+ _basekernel=2.6.36
+ pkgver=${_basekernel}.2
+@@ -31,6 +31,9 @@
+   # Add -ARCH patches
+   # See http://projects.archlinux.org/linux-2.6-ARCH.git/
+   patch -Np1 -i ${srcdir}/${_patchname}
++  
++  # Restore tux logos
++  patch -p1 -i ~/src/core/kernel26/tux-logo.patch || return 1
+ 
+   if [ "$CARCH" = "x86_64" ]; then
+     cat ../config.x86_64 >./.config
+@@ -48,6 +51,7 @@
+   #make nconfig # new CLI menu for configuration
+   #make xconfig # X-based configuration
+   #make oldconfig # using old config from previous kernel version
++  make localmodconfig
+   # ... or manually edit .config
+   ####################
+   # stop here
+@@ -60,7 +64,7 @@
+   make ${MAKEFLAGS} bzImage modules
+ }
+ 
+-package_kernel26() {
++package_kernel26-custom() {
+   pkgdesc="The Linux Kernel and modules"
+   groups=('base')
+   backup=(etc/mkinitcpio.d/${pkgname}.preset)

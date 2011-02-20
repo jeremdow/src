@@ -1,0 +1,19 @@
+diff -aur dmenu-orig/dmenu.c dmenu-c2e77ee26371/dmenu.c
+--- dmenu-orig/dmenu.c	2011-02-13 21:32:45.510000517 -0500
++++ dmenu-c2e77ee26371/dmenu.c	2011-02-13 21:33:00.980000182 -0500
+@@ -45,11 +45,11 @@
+ static int monitor = -1;
+ static int promptw;
+ static size_t cursor = 0;
+-static const char *font = NULL;
++static const char *font = "-*-terminus-medium-r-normal-*-16-*-*-*-*-*-*-*";
+ static const char *prompt = NULL;
+-static const char *normbgcolor = "#cccccc";
+-static const char *normfgcolor = "#000000";
+-static const char *selbgcolor  = "#0066ff";
++static const char *normbgcolor = "#000000";
++static const char *normfgcolor = "#ffffff";
++static const char *selbgcolor  = "#3465a4";
+ static const char *selfgcolor  = "#ffffff";
+ static unsigned long normcol[ColLast];
+ static unsigned long selcol[ColLast];

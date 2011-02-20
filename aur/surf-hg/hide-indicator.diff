@@ -1,0 +1,12 @@
+diff -aur surf-orig/surf.c surf/surf.c
+--- surf-orig/surf.c	2011-02-15 23:24:40.153333399 -0500
++++ surf/surf.c	2011-02-15 23:37:44.693335808 -0500
+@@ -761,7 +761,7 @@
+ 		t = g_strdup(c->linkhover);
+ 	else
+ 		t = g_strdup(c->title);
+-	drawindicator(c);
++	gtk_widget_hide_all(c->indicator);
+ 	gtk_window_set_title(GTK_WINDOW(c->win), t);
+ 	g_free(t);
+ }

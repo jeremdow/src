@@ -1,0 +1,11 @@
+--- /tmp/bauerbill/build/extra/xorg-server/PKGBUILD.bak	2010-11-05 19:55:20.576666338 -0400
++++ /tmp/bauerbill/build/extra/xorg-server/PKGBUILD	2010-11-05 19:55:56.946667149 -0400
+@@ -28,7 +28,7 @@
+   patch -Np3 -i "${srcdir}/xorg-redhat-die-ugly-pattern-die-die-die.patch"
+ 
+   ./configure --prefix=/usr \
+-      --enable-ipv6 \
++      --disable-ipv6 \
+       --enable-dri \
+       --enable-dmx \
+       --enable-xvfb \
