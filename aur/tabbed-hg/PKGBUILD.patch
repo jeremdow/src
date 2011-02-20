@@ -4,7 +4,7 @@
  license=("MIT/X")
  arch=("i686" "x86_64")
  depends=("libx11")
-+patchdir="$HOME/src/community/tabbed-hg"
++patchdir="$HOME/src/aur/tabbed-hg"
  makedepends=("mercurial")
  conflicts=("tabbed")
  provides=("tabbed")
