@@ -6,14 +6,14 @@ static const char *selfgcolor  = "#000000";
 static const char *before      = "<";
 static const char *after       = ">";
 static const int tabwidth      = 200;
-static const Bool foreground   = False;
+static const Bool foreground   = True;
 
 #define MODKEY ControlMask
 static Key keys[] = { \
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_Return, focusonce,      { 0 } },
 	{ MODKEY,                       XK_Return, spawn,          { .v = (char*[]){ "surf", "-e", winid, "google.com", NULL} } },
-  { MODKEY|Mod1Mask,              XK_Return, spawn,          { .v = (char*[]){ "urxvtc", "-embed", winid, "-e", "bash", NULL} } },
+  	{ MODKEY|Mod1Mask,              XK_Return, spawn,          { .v = (char*[]){ "urxvtc", "-embed", winid, "-e", "bash", NULL} } },
 	{ MODKEY|ShiftMask,             XK_l,      rotate,         { .i = +1 } },
 	{ MODKEY|ShiftMask,             XK_h,      rotate,         { .i = -1 } },
 	{ MODKEY,                       XK_Tab,    rotate,         { .i = 0 } },
