@@ -1,0 +1,59 @@
+diff -aur git-1.7.4.1-orig/gitweb/Makefile git-1.7.4.1/gitweb/Makefile
+--- git-1.7.4.1-orig/gitweb/Makefile	2011-03-07 22:16:23.000000000 -0500
++++ git-1.7.4.1/gitweb/Makefile	2011-03-07 22:44:22.000000000 -0500
+@@ -33,7 +33,7 @@
+ GITWEB_LOGO = static/git-logo.png
+ GITWEB_FAVICON = static/git-favicon.png
+ GITWEB_JS = static/gitweb.js
+-GITWEB_SITE_HEADER =
++GITWEB_SITE_HEADER = static/header.html
+ GITWEB_SITE_FOOTER =
+ HIGHLIGHT_BIN = highlight
+ 
+diff -aur git-1.7.4.1-orig/gitweb/static/gitweb.css git-1.7.4.1/gitweb/static/gitweb.css
+--- git-1.7.4.1-orig/gitweb/static/gitweb.css	2011-03-07 22:16:23.000000000 -0500
++++ git-1.7.4.1/gitweb/static/gitweb.css	2011-03-07 23:38:00.000000000 -0500
+@@ -1,9 +1,42 @@
++/* # Header # */
++.superHeader {
++    color: white;
++    background-color: rgb(100,135,220);
++    height: 1.6em;
++}
++
++.superHeader img { vertical-align: bottom; }
++
++.superHeader a, .superHeader a:visited {
++    color: white;
++    background-color: transparent;
++    font-size: 91%;
++    margin: 0;
++    padding: 0 0.5ex 0 0.25ex;
++    text-decoration: none;
++}
++
++a { text-decoration: none; }
++a:hover { text-decoration: underline; }
++
++.superHeader div {
++    margin-top: 0.40ex;
++}
++
++.superHeader .left { float:left; margin-left: 0.4em }
++.superHeader .right { float: right; margin-right: 0.4em }
++
++.doNotDisplay {
++    display: none;
++}
++
+ body {
+ 	font-family: sans-serif;
+ 	font-size: small;
+ 	border: solid #d9d8d1;
+ 	border-width: 1px;
+-	margin: 10px;
++	margin: 0;
++	border: 0;
+ 	background-color: #ffffff;
+ 	color: #000000;
+ }
