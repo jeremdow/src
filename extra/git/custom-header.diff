@@ -12,13 +12,13 @@ diff -aur git-1.7.4.1-orig/gitweb/Makefile git-1.7.4.1/gitweb/Makefile
  
 diff -aur git-1.7.4.1-orig/gitweb/static/gitweb.css git-1.7.4.1/gitweb/static/gitweb.css
 --- git-1.7.4.1-orig/gitweb/static/gitweb.css	2011-03-07 22:16:23.000000000 -0500
-+++ git-1.7.4.1/gitweb/static/gitweb.css	2011-03-16 23:44:20.000000000 -0400
++++ git-1.7.4.1/gitweb/static/gitweb.css	2011-03-17 19:17:21.000000000 -0400
 @@ -1,9 +1,43 @@
 +/* # Header # */
 +.superHeader {
 +  color: white;
 +  background-color: rgb(100,135,220);
-+  height: 1.6em;
++  height: 1.65em;
 +}
 +
 +.superHeader img { vertical-align: bottom; }
