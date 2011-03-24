@@ -12,13 +12,13 @@ diff -aur git-1.7.4.1-orig/gitweb/Makefile git-1.7.4.1/gitweb/Makefile
  
 diff -aur git-1.7.4.1-orig/gitweb/static/gitweb.css git-1.7.4.1/gitweb/static/gitweb.css
 --- git-1.7.4.1-orig/gitweb/static/gitweb.css	2011-03-07 22:16:23.000000000 -0500
-+++ git-1.7.4.1/gitweb/static/gitweb.css	2011-03-09 19:50:29.000000000 -0500
-@@ -1,9 +1,42 @@
++++ git-1.7.4.1/gitweb/static/gitweb.css	2011-03-17 19:17:21.000000000 -0400
+@@ -1,9 +1,43 @@
 +/* # Header # */
 +.superHeader {
 +  color: white;
 +  background-color: rgb(100,135,220);
-+  height: 1.6em;
++  height: 1.65em;
 +}
 +
 +.superHeader img { vertical-align: bottom; }
@@ -26,9 +26,10 @@ diff -aur git-1.7.4.1-orig/gitweb/static/gitweb.css git-1.7.4.1/gitweb/static/gi
 +.superHeader a, .superHeader a:visited {
 +  color: white;
 +  background-color: transparent;
-+  font-size: 91%;
++  font-size: 100%;
++  line-height: 1.6em;
 +  margin: 0;
-+  padding: 0 0.5ex 0 0.5ex;
++  padding: 0.4em 1ex;
 +}
 +
 +a { text-decoration: none; }
@@ -36,7 +37,7 @@ diff -aur git-1.7.4.1-orig/gitweb/static/gitweb.css git-1.7.4.1/gitweb/static/gi
 +
 +.superHeader div {
 +  position: absolute;
-+  top: 0.40ex;
++  top: 0;
 +}
 +
 +.superHeader .left { left: 0.4em; }
