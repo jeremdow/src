@@ -35,7 +35,7 @@ static const Layout layouts[] = {
 	{ "[-]",	    bstack },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-  { "[]=",      tile },    /* first entry is default */
+	{ "[]=",      tile },    /* first entry is default */
 	{ "[=]",	    bstackhoriz },
 };
 
@@ -54,7 +54,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *lockcmd[]    = { "slock", NULL };
-static const char *browsercmd[]= { "surf-tabbed", NULL };
+static const char *browsercmd[]= { "chromium", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
