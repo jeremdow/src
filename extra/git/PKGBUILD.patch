@@ -1,6 +1,6 @@
---- /tmp/bauerbill/build/extra/git/PKGBUILD.bak	2011-03-07 22:22:44.000000000 -0500
-+++ /tmp/bauerbill/build/extra/git/PKGBUILD	2011-03-07 22:23:43.000000000 -0500
-@@ -20,6 +20,7 @@
+--- PKGBUILD.orig	2011-05-19 19:15:30.000000000 -0400
++++ PKGBUILD	2011-05-19 19:17:48.000000000 -0400
+@@ -22,6 +22,7 @@ optdepends=('tk: gitk and git gui'
  replaces=('git-core')
  provides=('git-core')
  backup=('etc/conf.d/git-daemon.conf')
@@ -8,11 +8,11 @@
  source=("http://kernel.org/pub/software/scm/git/${pkgname}-${pkgver}.tar.bz2" \
          "http://kernel.org/pub/software/scm/git/git-manpages-${pkgver}.tar.bz2"
          git-daemon
-@@ -29,6 +30,7 @@
+@@ -31,6 +32,7 @@ changelog=ChangeLog
  build() {
    export PYTHON_PATH='/usr/bin/python2'
    cd "$srcdir/$pkgname-$pkgver"
 +  patch -p1 < $patchdir/custom-header.diff || return 1
-   make prefix=/usr gitexecdir=/usr/lib/git-core 
- }
+   make prefix=/usr gitexecdir=/usr/lib/git-core \
+     CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS"
  
