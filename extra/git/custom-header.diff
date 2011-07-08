@@ -1,6 +1,6 @@
 diff -aur git-1.7.6-orig/gitweb/Makefile git-1.7.6/gitweb/Makefile
---- git-1.7.6-orig/gitweb/Makefile	2011-07-02 02:01:11.000000000 -0400
-+++ git-1.7.6/gitweb/Makefile	2011-07-02 02:02:23.000000000 -0400
+--- git-1.7.6-orig/gitweb/Makefile	2011-07-07 20:46:11.000000000 -0400
++++ git-1.7.6/gitweb/Makefile	2011-07-07 20:46:57.000000000 -0400
 @@ -33,7 +33,7 @@
  GITWEB_LOGO = static/git-logo.png
  GITWEB_FAVICON = static/git-favicon.png
@@ -11,9 +11,9 @@ diff -aur git-1.7.6-orig/gitweb/Makefile git-1.7.6/gitweb/Makefile
  HIGHLIGHT_BIN = highlight
  
 diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb.css
---- git-1.7.6-orig/gitweb/static/gitweb.css	2011-07-02 02:01:11.000000000 -0400
-+++ git-1.7.6/gitweb/static/gitweb.css	2011-07-02 02:05:26.000000000 -0400
-@@ -1,9 +1,48 @@
+--- git-1.7.6-orig/gitweb/static/gitweb.css	2011-07-07 20:46:11.000000000 -0400
++++ git-1.7.6/gitweb/static/gitweb.css	2011-07-07 20:54:59.000000000 -0400
+@@ -1,9 +1,53 @@
 +/* # Header # */
 +.superHeader {
 +  color: white;
@@ -39,7 +39,12 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
 +  background-color: #5a5a5a;
 +}
 +
-+.superHeader a.active { font-weight:bold; }
++.superHeader a.thisPage{
++  color: white!important;
++  font-weight:bold;
++  border-top: 2px solid #DD4B39;
++  padding: .8ex 1ex 1ex;
++}
 +
 +.superHeader div {
 +  position: absolute;
@@ -57,23 +62,24 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
  	border: solid #d9d8d1;
  	border-width: 1px;
 -	margin: 10px;
-+  margin: 0;
-+  padding: 0;
-+  border: 0;
++	margin: 0;
++	padding: 0;
++	border: 0;
  	background-color: #ffffff;
  	color: #000000;
  }
-@@ -41,7 +80,8 @@
+@@ -41,7 +85,9 @@
  	padding: 8px;
  	font-size: 150%;
  	font-weight: bold;
 -	background-color: #d9d8d1;
 +	background-color: whiteSmoke;
-+  border-bottom: 1px solid #E5E5E5;
++	border-bottom: 1px solid #E5E5E5;
++
  }
  
  div.page_header a:visited, a.header {
-@@ -70,7 +110,6 @@
+@@ -70,7 +116,6 @@
  div.page_footer {
  	height: 17px;
  	padding: 4px 8px;
