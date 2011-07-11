@@ -32,11 +32,11 @@ static const Bool resizehints = True; /* True means respect size hints in tiled 
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[-]",	    bstack },
+	{ "[-]",      bstack },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-  { "[]=",      tile },    /* first entry is default */
-	{ "[=]",	    bstackhoriz },
+	{ "[]=",      tile },    /* first entry is default */
+	{ "[=]",      bstackhoriz },
 };
 
 /* key definitions */
@@ -54,7 +54,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *lockcmd[]    = { "slock", NULL };
-static const char *browsercmd[]= { "surf-tabbed", NULL };
+static const char *browsercmd[]= { "chromium", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */

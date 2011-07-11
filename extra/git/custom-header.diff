@@ -1,0 +1,89 @@
+diff -aur git-1.7.6-orig/gitweb/Makefile git-1.7.6/gitweb/Makefile
+--- git-1.7.6-orig/gitweb/Makefile	2011-07-07 20:46:11.000000000 -0400
++++ git-1.7.6/gitweb/Makefile	2011-07-07 20:46:57.000000000 -0400
+@@ -33,7 +33,7 @@
+ GITWEB_LOGO = static/git-logo.png
+ GITWEB_FAVICON = static/git-favicon.png
+ GITWEB_JS = static/gitweb.js
+-GITWEB_SITE_HEADER =
++GITWEB_SITE_HEADER = static/header.html
+ GITWEB_SITE_FOOTER =
+ HIGHLIGHT_BIN = highlight
+ 
+diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb.css
+--- git-1.7.6-orig/gitweb/static/gitweb.css	2011-07-07 20:46:11.000000000 -0400
++++ git-1.7.6/gitweb/static/gitweb.css	2011-07-07 20:54:59.000000000 -0400
+@@ -1,9 +1,53 @@
++/* # Header # */
++.superHeader {
++  color: white;
++  background-color: #2D2D2D;
++  height: 2.2em;
++  border-bottom: 1px solid black;
++}
++
++.superHeader img { vertical-align: middle; }
++
++.superHeader a, .superHeader a:visited {
++  color: #CCC;
++  background-color: transparent;
++  font-size: 100%;
++  line-height: 2.3em;
++  margin: 0;
++  padding: 1ex;
++  text-decoration: none;
++}
++
++.superHeader a:hover {
++  text-decoration: none;
++  background-color: #5a5a5a;
++}
++
++.superHeader a.thisPage{
++  color: white!important;
++  font-weight:bold;
++  border-top: 2px solid #DD4B39;
++  padding: .8ex 1ex 1ex;
++}
++
++.superHeader div {
++  position: absolute;
++  top: 0;
++}
++
++.superHeader .left { left: 0.4em; }
++.superHeader .right { right: 0.4em; }
++
++.doNotDisplay { display: none; }
++
+ body {
+ 	font-family: sans-serif;
+ 	font-size: small;
+ 	border: solid #d9d8d1;
+ 	border-width: 1px;
+-	margin: 10px;
++	margin: 0;
++	padding: 0;
++	border: 0;
+ 	background-color: #ffffff;
+ 	color: #000000;
+ }
+@@ -41,7 +85,9 @@
+ 	padding: 8px;
+ 	font-size: 150%;
+ 	font-weight: bold;
+-	background-color: #d9d8d1;
++	background-color: whiteSmoke;
++	border-bottom: 1px solid #E5E5E5;
++
+ }
+ 
+ div.page_header a:visited, a.header {
+@@ -70,7 +116,6 @@
+ div.page_footer {
+ 	height: 17px;
+ 	padding: 4px 8px;
+-	background-color: #d9d8d1;
+ }
+ 
+ div.page_footer_text {
