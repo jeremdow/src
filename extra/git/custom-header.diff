@@ -68,13 +68,14 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
  	background-color: #ffffff;
  	color: #000000;
  }
-@@ -41,7 +85,9 @@
+@@ -41,7 +85,10 @@
  	padding: 8px;
  	font-size: 150%;
  	font-weight: bold;
 -	background-color: #d9d8d1;
 +	background-color: whiteSmoke;
-+	border-bottom: 1px solid #E5E5E5;
++	border-top: 1px solid #D2D2D2;
++	border-bottom: 1px solid #D2D2D2;
 +
  }
  
