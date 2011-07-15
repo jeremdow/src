@@ -1,28 +1,30 @@
---- /tmp/bauerbill/build/community/dwm/PKGBUILD.bak	2010-09-24 20:06:52.974588614 -0400
-+++ /tmp/bauerbill/build/community/dwm/PKGBUILD	2010-09-24 20:08:24.585771086 -0400
-@@ -12,6 +12,7 @@
+--- PKGBUILD.orig	2011-07-11 11:02:58.668452169 -0400
++++ PKGBUILD	2011-07-11 11:04:34.908451405 -0400
+@@ -12,6 +12,7 @@ arch=('i686' 'x86_64')
  license=('MIT')
  options=(zipman)
  depends=('libx11' 'libxinerama')
 +patchdir="$HOME/src/community/dwm"
  install=dwm.install
- source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz \
+ source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
  	config.h
-@@ -23,12 +24,16 @@
+@@ -22,12 +23,18 @@ md5sums=('2799f885c05817ca112d521bb247f7
+ 
  build() {
    cd $srcdir/$pkgname-$pkgver
- 
 -  cp $srcdir/config.h config.h
 +  cp $patchdir/config.h config.h
 +  cp $patchdir/config.mk config.mk
- 
++
    sed -i 's/CPPFLAGS =/CPPFLAGS +=/g' config.mk
-   sed -i 's/CFLAGS =/CFLAGS +=/g' config.mk
-   sed -i 's/LDFLAGS =/LDFLAGS +=/g' config.mk
- 
+   sed -i 's/^CFLAGS = -g/#CFLAGS += -g/g' config.mk
+   sed -i 's/^#CFLAGS = -std/CFLAGS += -std/g' config.mk
+   sed -i 's/^LDFLAGS = -g/#LDFLAGS += -g/g' config.mk
+   sed -i 's/^#LDFLAGS = -s/LDFLAGS += -s/g' config.mk
++
 +  patch -p1 < $patchdir/bstack.diff || return 1
 +  patch -p1 < $patchdir/one_visible_noborder.diff || return 1
 +
-   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11 || return 1
-   make PREFIX=/usr DESTDIR=$pkgdir install || return 1
+   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+ }
  
