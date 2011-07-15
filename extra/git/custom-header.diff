@@ -18,7 +18,7 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
 +.superHeader {
 +  color: white;
 +  background-color: #2D2D2D;
-+  height: 2.2em;
++  height: 29px;
 +  border-bottom: 1px solid black;
 +}
 +
@@ -28,9 +28,9 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
 +  color: #CCC;
 +  background-color: transparent;
 +  font-size: 100%;
-+  line-height: 2.3em;
++  line-height: 31px;
 +  margin: 0;
-+  padding: 1ex;
++  padding: 8px 5px 6px;
 +  text-decoration: none;
 +}
 +
@@ -43,7 +43,7 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
 +  color: white!important;
 +  font-weight:bold;
 +  border-top: 2px solid #DD4B39;
-+  padding: .8ex 1ex 1ex;
++  padding-top: 6px;
 +}
 +
 +.superHeader div {
