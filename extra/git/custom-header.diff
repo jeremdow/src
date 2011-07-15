@@ -75,7 +75,7 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
 -	background-color: #d9d8d1;
 +	background-color: whiteSmoke;
 +	border-top: 1px solid #D2D2D2;
-+	border-bottom: 1px solid #D2D2D2;
++	border-bottom: 1px solid #E5E5E5;
 +
  }
  
