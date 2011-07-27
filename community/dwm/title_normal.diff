@@ -1,0 +1,12 @@
+diff -r 4548c824adac dwm.c
+--- a/dwm.c	Sun Jul 10 21:25:23 2011 +0100
++++ b/dwm.c	Mon Jul 11 02:30:13 2011 +0200
+@@ -760,7 +760,7 @@
+ 	if((dc.w = dc.x - x) > bh) {
+ 		dc.x = x;
+ 		if(m->sel) {
+-			col = m == selmon ? dc.sel : dc.norm;
++			col = dc.norm;
+ 			drawtext(m->sel->name, col, False);
+ 			drawsquare(m->sel->isfixed, m->sel->isfloating, False, col);
+ 		}
