@@ -1,5 +1,5 @@
---- PKGBUILD.orig	2011-07-11 11:02:58.668452169 -0400
-+++ PKGBUILD	2011-07-11 11:04:34.908451405 -0400
+--- PKGBUILD.orig	2011-07-26 21:20:30.240855937 -0400
++++ PKGBUILD	2011-07-26 21:37:26.345351226 -0400
 @@ -12,6 +12,7 @@ arch=('i686' 'x86_64')
  license=('MIT')
  options=(zipman)
@@ -8,7 +8,7 @@
  install=dwm.install
  source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
  	config.h
-@@ -22,12 +23,18 @@ md5sums=('2799f885c05817ca112d521bb247f7
+@@ -22,12 +23,19 @@ md5sums=('2799f885c05817ca112d521bb247f7
  
  build() {
    cd $srcdir/$pkgname-$pkgver
@@ -24,6 +24,7 @@
 +
 +  patch -p1 < $patchdir/bstack.diff || return 1
 +  patch -p1 < $patchdir/one_visible_noborder.diff || return 1
++  patch -p1 < $patchdir/title_normal.diff || return 1
 +
    make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
  }
