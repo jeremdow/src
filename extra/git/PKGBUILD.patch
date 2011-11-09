@@ -1,18 +1,18 @@
---- PKGBUILD	2011-10-06 15:56:16.000000000 -0400
-+++ PKGBUILD.orig	2011-10-06 15:55:19.000000000 -0400
-@@ -22,7 +22,6 @@ optdepends=('tk: gitk and git gui'
+--- PKGBUILD.orig	2011-11-09 11:35:37.000000000 -0500
++++ PKGBUILD	2011-11-09 11:38:05.000000000 -0500
+@@ -22,6 +22,7 @@
  replaces=('git-core')
  provides=('git-core')
  backup=('etc/conf.d/git-daemon.conf')
--patchdir="$HOME/src/extra/git"
++patchdir="$HOME/src/extra/git"
  #source=("http://kernel.org/pub/software/scm/git/${pkgname}-${pkgver}.tar.bz2"
  #        "http://kernel.org/pub/software/scm/git/git-manpages-$pkgver.tar.bz2"
  source=("http://git-core.googlecode.com/files/git-$pkgver.tar.gz"
-@@ -34,7 +33,6 @@ changelog=ChangeLog
+@@ -33,6 +34,7 @@
  build() {
    export PYTHON_PATH='/usr/bin/python2'
    cd "$srcdir/$pkgname-$pkgver"
--  patch -p1 < $patchdir/custom-header.diff || return 1
++  patch -p1 < $patchdir/custom-header.diff || return 1
    make prefix=/usr gitexecdir=/usr/lib/git-core \
      CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" \
      USE_LIBPCRE=1 \
