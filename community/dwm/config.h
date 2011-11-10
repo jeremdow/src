@@ -54,7 +54,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *lockcmd[]    = { "slock", NULL };
-static const char *browsercmd[]= { "chromium", NULL };
+static const char *browsercmd[]= { "google-chrome", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
