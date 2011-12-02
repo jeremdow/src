@@ -43,7 +43,7 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
 +  color: white!important;
 +  font-weight:bold;
 +  border-top: 2px solid #DD4B39;
-+  padding-top: 6px;
++  padding-top: 5px;
 +}
 +
 +.superHeader div {
