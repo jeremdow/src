@@ -1,18 +1,18 @@
-diff -aur git-1.7.6-orig/gitweb/Makefile git-1.7.6/gitweb/Makefile
---- git-1.7.6-orig/gitweb/Makefile	2011-07-07 20:46:11.000000000 -0400
-+++ git-1.7.6/gitweb/Makefile	2011-07-07 20:46:57.000000000 -0400
-@@ -33,7 +33,7 @@
- GITWEB_LOGO = static/git-logo.png
+diff -aur git-1.7.8-orig/gitweb/Makefile /git-1.7.8/gitweb/Makefile
+--- git-1.7.8-orig/gitweb/Makefile	2011-12-06 22:27:50.000000000 -0500
++++ git-1.7.8/gitweb/Makefile	2011-12-06 22:30:09.000000000 -0500
+@@ -35,7 +35,7 @@
  GITWEB_FAVICON = static/git-favicon.png
  GITWEB_JS = static/gitweb.js
+ GITWEB_SITE_HTML_HEAD_STRING =
 -GITWEB_SITE_HEADER =
 +GITWEB_SITE_HEADER = static/header.html
  GITWEB_SITE_FOOTER =
  HIGHLIGHT_BIN = highlight
  
-diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb.css
---- git-1.7.6-orig/gitweb/static/gitweb.css	2011-07-07 20:46:11.000000000 -0400
-+++ git-1.7.6/gitweb/static/gitweb.css	2011-07-07 20:54:59.000000000 -0400
+diff -aur git-1.7.8-orig/gitweb/static/gitweb.css git-1.7.8/gitweb/static/gitweb.css
+--- git-1.7.8-orig/gitweb/static/gitweb.css	2011-12-06 22:27:50.000000000 -0500
++++ git-1.7.8/gitweb/static/gitweb.css	2011-12-06 22:28:25.000000000 -0500
 @@ -1,9 +1,53 @@
 +/* # Header # */
 +.superHeader {
@@ -80,7 +80,7 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
  }
  
  div.page_header a:visited, a.header {
-@@ -70,7 +116,6 @@
+@@ -70,7 +117,6 @@
  div.page_footer {
  	height: 17px;
  	padding: 4px 8px;
