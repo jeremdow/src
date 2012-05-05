@@ -1,6 +1,6 @@
-diff -aur git-1.7.8-orig/gitweb/Makefile /git-1.7.8/gitweb/Makefile
---- git-1.7.8-orig/gitweb/Makefile	2011-12-06 22:27:50.000000000 -0500
-+++ git-1.7.8/gitweb/Makefile	2011-12-06 22:30:09.000000000 -0500
+diff -aur git-1.7.10.1-orig/gitweb/Makefile git-1.7.10.1/gitweb/Makefile
+--- git-1.7.10.1-orig/gitweb/Makefile	2012-05-04 19:49:56.000000000 -0400
++++ git-1.7.10.1/gitweb/Makefile	2012-05-04 20:00:14.000000000 -0400
 @@ -35,7 +35,7 @@
  GITWEB_FAVICON = static/git-favicon.png
  GITWEB_JS = static/gitweb.js
@@ -10,9 +10,9 @@ diff -aur git-1.7.8-orig/gitweb/Makefile /git-1.7.8/gitweb/Makefile
  GITWEB_SITE_FOOTER =
  HIGHLIGHT_BIN = highlight
  
-diff -aur git-1.7.8-orig/gitweb/static/gitweb.css git-1.7.8/gitweb/static/gitweb.css
---- git-1.7.8-orig/gitweb/static/gitweb.css	2011-12-06 22:27:50.000000000 -0500
-+++ git-1.7.8/gitweb/static/gitweb.css	2011-12-06 22:28:25.000000000 -0500
+diff -aur git-1.7.10.1-orig/gitweb/static/gitweb.css git-1.7.10.1/gitweb/static/gitweb.css
+--- git-1.7.10.1-orig/gitweb/static/gitweb.css	2012-05-04 19:49:56.000000000 -0400
++++ git-1.7.10.1/gitweb/static/gitweb.css	2012-05-04 20:06:29.000000000 -0400
 @@ -1,9 +1,53 @@
 +/* # Header # */
 +.superHeader {
@@ -68,7 +68,7 @@ diff -aur git-1.7.8-orig/gitweb/static/gitweb.css git-1.7.8/gitweb/static/gitweb
  	background-color: #ffffff;
  	color: #000000;
  }
-@@ -41,7 +85,10 @@
+@@ -41,7 +85,9 @@
  	padding: 8px;
  	font-size: 150%;
  	font-weight: bold;
@@ -76,11 +76,10 @@ diff -aur git-1.7.8-orig/gitweb/static/gitweb.css git-1.7.8/gitweb/static/gitweb
 +	background-color: whiteSmoke;
 +	border-top: 1px solid #D2D2D2;
 +	border-bottom: 1px solid #E5E5E5;
-+
  }
  
  div.page_header a:visited, a.header {
-@@ -70,7 +117,6 @@
+@@ -70,7 +116,6 @@
  div.page_footer {
  	height: 17px;
  	padding: 4px 8px;
@@ -88,3 +87,13 @@ diff -aur git-1.7.8-orig/gitweb/static/gitweb.css git-1.7.8/gitweb/static/gitweb
  }
  
  div.page_footer_text {
+@@ -521,8 +566,7 @@
+ }
+ 
+ div.projsearch {
+-	text-align: center;
+-	margin: 20px 0px;
++	margin: 20px;
+ }
+ 
+ div.projsearch form {
