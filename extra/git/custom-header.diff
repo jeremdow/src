@@ -1,18 +1,18 @@
-diff -aur git-1.7.6-orig/gitweb/Makefile git-1.7.6/gitweb/Makefile
---- git-1.7.6-orig/gitweb/Makefile	2011-07-07 20:46:11.000000000 -0400
-+++ git-1.7.6/gitweb/Makefile	2011-07-07 20:46:57.000000000 -0400
-@@ -33,7 +33,7 @@
- GITWEB_LOGO = static/git-logo.png
+diff -aur git-1.7.10.1-orig/gitweb/Makefile git-1.7.10.1/gitweb/Makefile
+--- git-1.7.10.1-orig/gitweb/Makefile	2012-05-04 19:49:56.000000000 -0400
++++ git-1.7.10.1/gitweb/Makefile	2012-05-04 20:00:14.000000000 -0400
+@@ -35,7 +35,7 @@
  GITWEB_FAVICON = static/git-favicon.png
  GITWEB_JS = static/gitweb.js
+ GITWEB_SITE_HTML_HEAD_STRING =
 -GITWEB_SITE_HEADER =
 +GITWEB_SITE_HEADER = static/header.html
  GITWEB_SITE_FOOTER =
  HIGHLIGHT_BIN = highlight
  
-diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb.css
---- git-1.7.6-orig/gitweb/static/gitweb.css	2011-07-07 20:46:11.000000000 -0400
-+++ git-1.7.6/gitweb/static/gitweb.css	2011-07-07 20:54:59.000000000 -0400
+diff -aur git-1.7.10.1-orig/gitweb/static/gitweb.css git-1.7.10.1/gitweb/static/gitweb.css
+--- git-1.7.10.1-orig/gitweb/static/gitweb.css	2012-05-04 19:49:56.000000000 -0400
++++ git-1.7.10.1/gitweb/static/gitweb.css	2012-05-04 20:06:29.000000000 -0400
 @@ -1,9 +1,53 @@
 +/* # Header # */
 +.superHeader {
@@ -43,7 +43,7 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
 +  color: white!important;
 +  font-weight:bold;
 +  border-top: 2px solid #DD4B39;
-+  padding-top: 6px;
++  padding-top: 5px;
 +}
 +
 +.superHeader div {
@@ -68,7 +68,7 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
  	background-color: #ffffff;
  	color: #000000;
  }
-@@ -41,7 +85,10 @@
+@@ -41,7 +85,9 @@
  	padding: 8px;
  	font-size: 150%;
  	font-weight: bold;
@@ -76,7 +76,6 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
 +	background-color: whiteSmoke;
 +	border-top: 1px solid #D2D2D2;
 +	border-bottom: 1px solid #E5E5E5;
-+
  }
  
  div.page_header a:visited, a.header {
@@ -88,3 +87,13 @@ diff -aur git-1.7.6-orig/gitweb/static/gitweb.css git-1.7.6/gitweb/static/gitweb
  }
  
  div.page_footer_text {
+@@ -521,8 +566,7 @@
+ }
+ 
+ div.projsearch {
+-	text-align: center;
+-	margin: 20px 0px;
++	margin: 20px;
+ }
+ 
+ div.projsearch form {
