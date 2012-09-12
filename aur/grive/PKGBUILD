@@ -1,0 +1,34 @@
+# Maintainer: Giuseppe Calà <jiveaxe@gmail.com>
+# Contributer: giacomogiorgianni@gmail.com
+# Contributor: TingPing <tingping@tingping.se>
+
+pkgname=grive
+pkgver=0.2.0
+pkgrel=38
+pkgdesc="Open source Linux client for Google Drive"
+arch=('i686' 'x86_64')
+url="http://grive.github.com/grive/"
+license=('GPL')
+categories=('network')
+depends=('gcc-libs' 'curl' 'json-c' 'openssl' 'boost')
+makedepends=('cmake' 'cppunit')
+options=(!emptydirs)
+source=("http://www.lbreda.com/grive/_media/packages/$pkgver/grive-$pkgver.tar.gz")
+
+md5sums=('8260b1e6c0369da35ebcfe8c8f840f2b')
+
+build() {
+	cd "$srcdir/grive-$pkgver"
+	rm -rf build
+	mkdir build 
+	cd build
+	cmake .. -DCMAKE_BUILD_TYPE=Release \
+			-DCMAKE_INSTALL_PREFIX=/usr 
+	make
+}
+ 
+package() {
+	cd "$srcdir/grive-$pkgver/build"
+	make DESTDIR="$pkgdir" install
+	install -D "$srcdir/grive-$pkgver/build/grive/grive" "$pkgdir/usr/bin/grive"
+}
