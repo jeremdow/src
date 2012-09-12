@@ -1,14 +1,14 @@
---- PKGBUILD.orig	2012-02-22 11:56:32.000000000 -0500
-+++ PKGBUILD	2012-02-22 11:57:08.000000000 -0500
-@@ -22,6 +22,7 @@
+--- PKGBUILD.orig	2012-08-24 12:34:47.000000000 -0400
++++ PKGBUILD	2012-08-24 12:36:57.000000000 -0400
+@@ -22,6 +22,7 @@ optdepends=('tk: gitk and git gui'
  replaces=('git-core')
  provides=('git-core')
  backup=('etc/conf.d/git-daemon.conf')
 +patchdir="$HOME/src/extra/git"
+ install=git.install
  source=("http://git-core.googlecode.com/files/git-$pkgver.tar.gz"
          "http://git-core.googlecode.com/files/git-manpages-$pkgver.tar.gz"
-         git-daemon
-@@ -31,6 +32,7 @@
+@@ -33,6 +34,7 @@ source=("http://git-core.googlecode.com/
  build() {
    export PYTHON_PATH='/usr/bin/python2'
    cd "$srcdir/$pkgname-$pkgver"
