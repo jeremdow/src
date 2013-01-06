@@ -51,7 +51,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
-static const char *brwscmd[]  = { "google-chrome", NULL };
+static const char *brwscmd[]  = { "tabbed", "surf", "-e", NULL };
 
 
 static Key keys[] = {
@@ -59,7 +59,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
-	{ ControlMask|ShiftMask,        XK_Return, spawn,          {.v = brwscmd } },
+	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = brwscmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
